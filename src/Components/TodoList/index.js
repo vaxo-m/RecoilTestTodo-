@@ -17,7 +17,7 @@ const TodoList = () => {
     return state.map((todo, i) => {
       return todo.isEditMode ?
       <TodoLisItemEdit
-        id={todo.id}
+        todo={todo}
         key={todo.id}
       />
       :

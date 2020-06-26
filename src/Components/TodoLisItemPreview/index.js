@@ -18,16 +18,30 @@ const TodoListItemPreview = ({todo}) => {
     })
     setState(newList);
   }
+
+  const edit = () => {
+    const newList = state.map((item) => {
+      if(item.id===todo.id) {
+        return {
+          ...item,
+          isEditMode:!item.isEditMode
+        }
+      }
+      return item
+    })
+    setState(newList);
+  }
+
   useEffect( () => {
 
   },[todo])
   // <button onClick={ () => remove(i) }>Remove</button> */
-  // <button onClick={edit}>Edit</button>
   return (
     <li className={todo.isDone ? "todo-item done" : "todo-item"} >
 
         <p>{todo.text}</p>
         <button onClick={done}>Done</button>
+        <button onClick={edit}>Edit</button>
     </li>
   );
 }

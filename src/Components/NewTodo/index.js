@@ -24,9 +24,7 @@ const NewTodo = ({handleTodo}) => {
 
 
   return (
-    <div className="textField">
-       {console.log(state)}
-       {console.log("rendered new todo")}
+    <div className="textField">       
        <TextField
          id="outlined-basic"
          label="Enter new todo"
