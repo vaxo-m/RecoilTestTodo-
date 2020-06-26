@@ -8,6 +8,7 @@ const NewTodo = ({handleTodo}) => {
   const [text, setText] = useState("");
   let [state, setState] = useRecoilState(todoListState);
   const onKeyPress = (e) => {
+    console.log("keypress");
     if(e.key === 'Enter') {
       setState((oldState) => [
         ...oldState, {
@@ -17,14 +18,14 @@ const NewTodo = ({handleTodo}) => {
           isEditMode: false
         }
       ]);
-
+      setText("");
     }
   }
 
-  console.log(state);
 
   return (
     <div className="textField">
+       {console.log(state)}
        {console.log("rendered new todo")}
        <TextField
          id="outlined-basic"

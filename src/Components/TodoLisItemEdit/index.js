@@ -20,7 +20,6 @@ const TodoLisItemEdit = ({todo, changeHandler, handleChangedTodo, i}) => {
         fullWidth
         margin="normal"
         autoFocus
-
         onChange={ (e) => changeHandler(e, i) }
         onKeyPress={ (e) => onKeyPress(e, i) }
       />

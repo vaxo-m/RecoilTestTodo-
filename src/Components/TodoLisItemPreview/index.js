@@ -21,8 +21,8 @@ const TodoListItemPreview = ({todo}) => {
   useEffect( () => {
 
   },[todo])
-  // /*<button onClick={ () => edit(i) }>Edit</button>
   // <button onClick={ () => remove(i) }>Remove</button> */
+  // <button onClick={edit}>Edit</button>
   return (
     <li className={todo.isDone ? "todo-item done" : "todo-item"} >
 
