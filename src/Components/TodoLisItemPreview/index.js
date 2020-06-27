@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { todoListState } from '../../recoil.js'
-import { RecoilRoot, useRecoilState } from 'recoil'
-import TextField from '@material-ui/core/TextField';
+import { useRecoilState } from 'recoil'
 
 const TodoListItemPreview = ({todo, i}) => {
-
   let [state, setState] = useRecoilState(todoListState);
   const done = () => {
     const newList = state.map((item) => {

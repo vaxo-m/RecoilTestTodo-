@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
 // import * as serviceWorker from './serviceWorker';
-import { RecoilRoot, useRecoilState } from 'recoil'
+import { RecoilRoot } from 'recoil'
 
 // <React.StrictMode>
 // </React.StrictMode>,

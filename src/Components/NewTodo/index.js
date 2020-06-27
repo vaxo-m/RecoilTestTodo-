@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { RecoilRoot, useRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import { todoListState } from '../../recoil.js'
 import TextField from '@material-ui/core/TextField';
 
 const NewTodo = ({handleTodo}) => {
-
   const [text, setText] = useState("");
-  let [state, setState] = useRecoilState(todoListState);
+  let [ , setState] = useRecoilState(todoListState);
   const onKeyPress = (e) => {
-    console.log("keypress");
     if(e.key === 'Enter') {
       setState((oldState) => [
         ...oldState, {
@@ -24,7 +22,7 @@ const NewTodo = ({handleTodo}) => {
 
 
   return (
-    <div className="textField">       
+    <div className="textField">
        <TextField
          id="outlined-basic"
          label="Enter new todo"

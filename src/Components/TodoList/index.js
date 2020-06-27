@@ -1,18 +1,13 @@
 import React from 'react';
 import TodoLisItemPreview from '../TodoLisItemPreview'
 import { todoListState } from '../../recoil.js'
-import { RecoilRoot, useRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import TodoLisItemEdit from '../TodoLisItemEdit'
-
-import TextField from '@material-ui/core/TextField';
-
 
 import './style.css';
 
 const TodoList = () => {
-
-  let [state, setState] = useRecoilState(todoListState);
-
+  let [state] = useRecoilState(todoListState);
   const renderTodos = () => {
     return state.map((todo, i) => {
       return todo.isEditMode ?

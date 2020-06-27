@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { todoListState } from '../../recoil.js'
-import { RecoilRoot, useRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import TextField from '@material-ui/core/TextField';
 
 const TodoLisItemEdit = ({todo}) => {
   const [editedTodoText, setEditedTodoText] = useState(todo.text)
   let [state, setState] = useRecoilState(todoListState);
-
   const onKeyPress = (e) => {
     if(e.key === 'Enter') {
     const newList = state.map((item) => {
