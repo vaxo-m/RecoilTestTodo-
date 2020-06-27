@@ -9,7 +9,6 @@ const TodoLisItemEdit = ({todo}) => {
 
   const onKeyPress = (e) => {
     if(e.key === 'Enter') {
-      // handleChangedTodo(i);
     const newList = state.map((item) => {
       if(item.id===todo.id) {
         return {
@@ -24,7 +23,6 @@ const TodoLisItemEdit = ({todo}) => {
     }
   }
 
-  // onChange={ (e) => changeHandler(e, i) }
   return (
     <form className="" noValidate autoComplete="off" >
       <TextField

@@ -3,7 +3,7 @@ import { todoListState } from '../../recoil.js'
 import { RecoilRoot, useRecoilState } from 'recoil'
 import TextField from '@material-ui/core/TextField';
 
-const TodoListItemPreview = ({todo}) => {
+const TodoListItemPreview = ({todo, i}) => {
 
   let [state, setState] = useRecoilState(todoListState);
   const done = () => {
@@ -14,7 +14,7 @@ const TodoListItemPreview = ({todo}) => {
           isDone:!item.isDone
         }
       }
-      return item
+      return item;
     })
     setState(newList);
   }
@@ -27,21 +27,24 @@ const TodoListItemPreview = ({todo}) => {
           isEditMode:!item.isEditMode
         }
       }
-      return item
+      return item;
     })
     setState(newList);
+  }
+
+  const remove = () => {
+    setState([...state.slice(0, i), ...state.slice(i + 1)]);
   }
 
   useEffect( () => {
 
   },[todo])
-  // <button onClick={ () => remove(i) }>Remove</button> */
   return (
     <li className={todo.isDone ? "todo-item done" : "todo-item"} >
-
         <p>{todo.text}</p>
         <button onClick={done}>Done</button>
         <button onClick={edit}>Edit</button>
+        <button onClick={remove}>Remove</button>
     </li>
   );
 }

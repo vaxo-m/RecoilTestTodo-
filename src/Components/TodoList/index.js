@@ -24,6 +24,7 @@ const TodoList = () => {
       <TodoLisItemPreview
         todo={todo}
         key={todo.id}
+        i={i}
       />
     })
   }
